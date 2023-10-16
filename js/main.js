@@ -10,10 +10,11 @@ function intNumberInput(question, defaultAnswer = '') {
         let answer = prompt(`${question}`, defaultAnswer);
 
         if (answer === null)
-            // if the user clicks Cancel, the script will say 'Bye'
+            //If the user clicks Cancel, the script will say 'Bye'
             return null;
-        else if (answer.trim().length === 0 || Number.isNaN(+answer) || +number < 1)
-            // If the user inputs '' or NaN, the script ask the user to input a number again
+        else if (answer.trim().length === 0 || isNaN(+answer) || +number < 1)
+            // If the user inputs '', NaN or zero/negative number,
+            // the script will ask the user to input a number again
             alert(`You passed <${answer}>. Please pass a positive Number!`);
         else
             number = +answer;
